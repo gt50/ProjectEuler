@@ -22,12 +22,12 @@ def find_primes(max):
     for i in range(8,max):
         if is_prime(i):
             k = str(i)
-`           truncate_left = [i[j:] for j in range(len(k))]
-            truncate_right = [i[:j:] for j in range(1,len(k)+1)]
-            if is_prime(truncate_left) and is_prime(truncate_right):
+            truncate_left = [k[j:] for j in range(len(k))]
+            truncate_right = [k[:j:] for j in range(1,len(k)+1)]
+            if is_prime_list(truncate_left) and is_prime_list(truncate_right):
                 primes.append(i)
                 if len(primes) >=11:
-                    return primes
+                    return sum(primes)
     return primes
 
 def test():
@@ -36,4 +36,4 @@ def test():
     print "Tests Passed!"
 
 test()
-print find_primes(1000)
+print find_primes(1000000)
