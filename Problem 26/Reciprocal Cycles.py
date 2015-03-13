@@ -22,7 +22,7 @@ def long_division_repeat_length(n,d):
         tempnumerator = tempnumerator % d
         if endofnumerator:
             if tempnumerator in remainders:
-                print n, d, len(remainders), remainders
+                #print n, d, len(remainders), remainders
                 return len(remainders)
             else:
                 remainders.append(tempnumerator)
@@ -36,7 +36,7 @@ def test():
 
 def find_longest():
     longest = (0,0)
-    for i in range(1,100):
+    for i in range(1,1000):
         length = long_division_repeat_length(1,i)
         if length > longest[1]:
             longest = (i,length)
